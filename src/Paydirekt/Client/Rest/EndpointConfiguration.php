@@ -11,7 +11,7 @@ final class EndpointConfiguration
     const API_KEY = "e81d298b-60dd-4f46-9ec9-1dbc72f5b5df";
     const API_SECRET = "GJlN718sQxN1unxbLWHVlcf0FgXw2kMyfRwD0mgTRME=";
 
-    const ENDPOINT_SWITCH = "sandbox";
+    const ENDPOINT_SWITCH = "production";
 
     const SANDBOX_CHECKOUT_ENDPOINT = "https://api.sandbox.paydirekt.de/api/checkout/v1/checkouts";
     const PRODUCTION_CHECKOUT_ENDPOINT = "https://api.paydirekt.de/api/checkout/v1/checkouts";
