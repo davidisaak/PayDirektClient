@@ -23,20 +23,16 @@ final class EndpointConfiguration
     const PRODUCTION_TRANSACTION_REPORTS_ENDPOINT = "https://api.paydirekt.de/api/reporting/v1/reports/transactions";
 
 
-    public static function getCheckoutEndpoint() {
-        return self::isProduction() ? self::PRODUCTION_CHECKOUT_ENDPOINT : self::SANDBOX_CHECKOUT_ENDPOINT;
+    public static function getCheckoutEndpoint($isProduction) {
+        return $isProduction ? self::PRODUCTION_CHECKOUT_ENDPOINT : self::SANDBOX_CHECKOUT_ENDPOINT;
     }
 
-    public static function getTokenObtainEndpoint() {
-        return self::isProduction() ? self::PRODUCTION_TOKEN_OBTAIN_ENDPOINT : self::SANDBOX_TOKEN_OBTAIN_ENDPOINT;
+    public static function getTokenObtainEndpoint($isProduction) {
+        return $isProduction ? self::PRODUCTION_TOKEN_OBTAIN_ENDPOINT : self::SANDBOX_TOKEN_OBTAIN_ENDPOINT;
     }
 
-    public static function getTransactionReportsEndpoint() {
-        return self::isProduction() ? self::PRODUCTION_TRANSACTION_REPORTS_ENDPOINT : self::SANDBOX_TRANSACTION_REPORTS_ENDPOINT;
-    }
-
-    private static function isProduction() {
-        return "production" == self::ENDPOINT_SWITCH;
+    public static function getTransactionReportsEndpoint($isProduction) {
+        return $isProduction ? self::PRODUCTION_TRANSACTION_REPORTS_ENDPOINT : self::SANDBOX_TRANSACTION_REPORTS_ENDPOINT;
     }
 
     public static function getCaFile() {

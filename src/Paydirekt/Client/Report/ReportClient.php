@@ -29,11 +29,14 @@ class ReportClient
     /**
      * Creates a report client for the standard report endpoint.
      * <p>
+     *
+     * @param $isProduction
+     *
      * @return ReportClient The new ReportClient.
      */
-    public static function withStandardEndpoint()
+    public static function withStandardEndpoint($isProduction)
     {
-        return new self(EndpointConfiguration::getTransactionReportsEndpoint());
+        return new self(EndpointConfiguration::getTransactionReportsEndpoint($isProduction));
     }
 
     private function getTransactions($reportRequest, $header, $deserialize)

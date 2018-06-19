@@ -31,11 +31,14 @@ class CheckoutClient
     /**
      * Creates a checkout client for the standard checkout endpoint.
      * <p>
+     *
+     * @param $isProduction
+     *
      * @return CheckoutClient The new CheckoutClient.
      */
-    public static function withStandardEndpoint()
+    public static function withStandardEndpoint($isProduction)
     {
-        return new self(EndpointConfiguration::getCheckoutEndpoint());
+        return new self(EndpointConfiguration::getCheckoutEndpoint($isProduction));
     }
 
     /**
